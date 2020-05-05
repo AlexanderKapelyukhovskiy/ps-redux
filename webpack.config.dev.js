@@ -6,16 +6,16 @@ process.env.NODE_ENV = "development";
 
 module.exports = {
   mode: "development",
-  terget: "web",
-  devTool: "cheap-module-source-map",
+  target: "web",
+  devtool: "cheap-module-source-map",
   entry: "./src/index",
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
-    fileName: "bundle.js",
+    filename: "bundle.js",
   },
   devServer: {
-    stats: "minimum",
+    stats: "minimal",
     overlay: true,
     historyApiFallback: true,
     disableHostCheck: true,
