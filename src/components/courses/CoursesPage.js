@@ -19,6 +19,8 @@ class CoursesPage extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.actions.createCourse(this.state.course);
+    const course = { ...this.state.course, title: "" };
+    this.setState({ course });
   };
 
   render() {
