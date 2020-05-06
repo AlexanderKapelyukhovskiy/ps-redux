@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 process.env.NODE_ENV = "development";
@@ -25,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      "propcess.env.API_URL": JSON.stringify("http://localhost:3001"),
+      "process.env.API_URL": JSON.stringify("http://localhost:3001"),
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
