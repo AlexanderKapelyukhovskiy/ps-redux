@@ -21,17 +21,17 @@ function ManageCoursePage({
     if (courses.length === 0) {
       loadCourses().catch((error) => {
         alert("Loading courses failed" + error);
-        throw error;
       });
+    } else {
+      setCourse({ ...props.course });
     }
 
     if (authors.length === 0) {
       loadAuthors().catch((error) => {
         alert("Loading authors failed" + error);
-        throw error;
       });
     }
-  }, []);
+  }, [props.course]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -49,7 +49,7 @@ function ManageCoursePage({
   return (
     <CourseForm
       course={course}
-      error={errors}
+      errors={errors}
       authors={authors}
       onChange={handleChange}
       onSave={handleSave}
